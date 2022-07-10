@@ -1,12 +1,24 @@
 import './App.css';
+import Home from './components/Home';
+import Privacy from './components/Privacy';
+import About from './components/About';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>SOS YOUSSOUFIA APP</h1>
-      </header>
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="privacy_policy" element={<Privacy />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
