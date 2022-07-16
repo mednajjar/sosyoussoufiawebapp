@@ -9,7 +9,6 @@ import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import PersonIcon from '@mui/icons-material/Person';
-import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 
 const emails = ['najjarmedd@gmail.com', 'LinkedIn'];
@@ -77,9 +76,9 @@ export default function Contact() {
 
     return (
         <div className='text-center mt-10'>
-            <Typography variant="subtitle1" component="div">
+            <h3 className='font-semibold text-lg'>
                 Contacter le développeur
-            </Typography>
+            </h3>
             <br />
             <Button variant="outlined" onClick={handleClickOpen}>
                 Informations
