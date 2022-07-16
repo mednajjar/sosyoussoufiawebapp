@@ -7,7 +7,7 @@ const HeaderHero = () => {
             <div className='flex-table text-center font-mono'>
                 <h1 className='text-3xl font-bold text-green-500'>SOS YOUSSOUFIA APP</h1>
                 <div className='font-semibold mt-4 leading-9 text-xl p-3'>
-                    <p>The First Version is Now available on Play Store</p>
+                    <p>The First Version is Now available on Google Play</p>
                     <p>Find a Guard Pharmacy Location Using Map <br></br> and All Taxis Phone Numbers</p>
                 </div>
                 <div className='flex mt-3 justify-center'>
