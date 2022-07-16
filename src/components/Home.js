@@ -5,7 +5,7 @@ import HeaderHero from './layouts/HeaderHero'
 const Home = () => {
     return (
 
-        <div className='bg-orange-300'>
+        <div>
             <HeaderHero />
         </div>
 
