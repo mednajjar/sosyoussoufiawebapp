@@ -4,6 +4,7 @@ import Contact from './Contact';
 import NotFound from './NotFound';
 import Privacy from './Privacy';
 import TopBar from './layouts/TopBar';
+import Footer from './layouts/Footer'
 
 export {
     Home,
@@ -11,5 +12,6 @@ export {
     Contact,
     NotFound,
     Privacy,
-    TopBar
+    TopBar,
+    Footer
 }

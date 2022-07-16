@@ -4,7 +4,7 @@ import { Logo } from '../../assets';
 
 const TopBar = () => {
     return (
-        <header className="flex justify-between h-auto relative w-full z-10 mt-0">
+        <header className="flex justify-between h-auto  w-full">
             <Link to="/">
                 <img src={Logo} alt="logo" srcset="" className='w-24 h-auto py-4 ml-4' />
             </Link>

@@ -3,9 +3,11 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div>
+        <div className='w-full p-5 rtl text-center mt-5 ml-auto mr-auto'>
+            <h2 className='text-2xl font-medium text-slate-700'>حول التطبيق</h2>
 
-            <h1>About</h1>
+            <p className='text-lg font-medium text-slate-700 group-hover:text-slate-900 mt-4 leading-9'>أول نسخة من  هذا التطبيق يفيد في معرفة صيدلية الحراسة في المنطقة مع معرفة الموقع على الخريطة كما يتيح معلومات الاتصال و ربط الاتتصال بسيارة الأجرة من النوع الصغير أرجو أن ينتفع به ساكنة مدينة اليوسفية</p>
+            <p className='text-lg font-medium text-slate-700 group-hover:text-slate-900 mt-4 leading-9'>سنقوم بإضافة خدمات أخرى مستقبلا حسب الحاجة</p>
 
         </div>
     )
