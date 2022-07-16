@@ -1,7 +1,5 @@
-import './App.css';
-import Home from './components/Home';
-import Privacy from './components/Privacy';
-import About from './components/About';
+import './index.css';
+import { Home, About, NotFound, Contact, Privacy, TopBar } from './components';
 import {
   BrowserRouter,
   Routes,
@@ -9,14 +7,18 @@ import {
 } from "react-router-dom";
 
 
+
 function App() {
   return (
 
     <BrowserRouter>
+      <TopBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" exact element={<Home />} />
         <Route path="privacy_policy" element={<Privacy />} />
         <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" exact={true} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,15 @@
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+import NotFound from './NotFound';
+import Privacy from './Privacy';
+import TopBar from './layouts/TopBar';
+
+export {
+    Home,
+    About,
+    Contact,
+    NotFound,
+    Privacy,
+    TopBar
+}

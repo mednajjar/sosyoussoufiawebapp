@@ -1,15 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// import { Logo } from '../assets';
 
 const Home = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>SOS YOUSSOUFIA APP</h1>
-                <Link to="privacy_policy">PRIVACY POLICY</Link>
-                <Link to="about">ABOUT ME!</Link>
-            </header>
-        </div>
+
+        <h1>Home</h1>
+
     )
 }
 
