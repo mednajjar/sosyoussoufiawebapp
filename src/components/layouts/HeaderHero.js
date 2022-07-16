@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AppPic, GooglePlay } from '../../assets'
+import { ScreensApp, GooglePlay } from '../../assets'
 const HeaderHero = () => {
     return (
         <div className='flex flex-wrap justify-around mt-7 items-center absolute w-full'>
@@ -18,7 +18,7 @@ const HeaderHero = () => {
 
             </div>
             <div className='mt-6'>
-                <img src={AppPic} alt="app" srcset="" style={{ width: "20vw", height: "auto" }} />
+                <img src={ScreensApp} alt="app" srcset="" style={{ width: "35vw", height: "auto" }} />
             </div>
         </div>
     )
