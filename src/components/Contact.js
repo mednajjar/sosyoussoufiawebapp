@@ -77,7 +77,7 @@ export default function Contact() {
     return (
         <div className='text-center mt-10'>
             <h3 className='font-semibold text-lg'>
-                Contacter le développeur
+                Contact The Developer
             </h3>
             <br />
             <Button variant="outlined" onClick={handleClickOpen}>
