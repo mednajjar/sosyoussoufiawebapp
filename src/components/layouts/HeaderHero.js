@@ -19,13 +19,13 @@ const HeaderHero = () => {
                 </div>
                 <div className='flex mt-3 justify-center'>
                     <Link to="!#">
-                        <img src={GooglePlay} alt="" srcset="" className='w-48 text-center' />
+                        <img src={GooglePlay} alt="google play" className='w-48 text-center' />
                     </Link>
                 </div>
 
             </div>
             <div className='mt-6'>
-                <img src={ScreensApp} alt="app" srcset="" style={{ width: "35vw", height: "auto" }} />
+                <img src={ScreensApp} alt="app" style={{ width: "35vw", height: "auto" }} />
             </div>
         </div>
     )
