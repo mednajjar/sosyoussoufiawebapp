@@ -51,7 +51,7 @@ const TopBar = (args) => {
                 </NavLink>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="me-auto" style={{ width: "95%", margin: "0 auto" }} navbar>
+                    <Nav className="me-auto" style={{ width: "97%", margin: "0 auto" }} navbar>
                         <NavItem>
                             <NavLink style={navigationActive} className='font-semibold text-lg w-40 no-underline' to="/">Home</NavLink>
                         </NavItem>
