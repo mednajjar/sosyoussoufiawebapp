@@ -5,11 +5,7 @@ import HeaderHero from './layouts/HeaderHero'
 
 const Home = () => {
     return (
-
-
         <HeaderHero />
-
-
     )
 }
 
