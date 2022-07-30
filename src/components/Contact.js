@@ -75,7 +75,10 @@ export default function Contact() {
     };
 
     return (
-        <div className='text-center mt-10'>
+        <div className='text-center' style={{
+            position: 'relative',
+            top: 100
+        }}>
             <h3 className='font-semibold text-lg'>
                 Contact The Developer
             </h3>

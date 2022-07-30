@@ -4,6 +4,7 @@ import GooglePlay from './images/google-play.png';
 import ScreensApp from './images/screensApp.png';
 import LinkedIn from './icons/linkedin.png';
 import Whatsapp from './icons/whatsapp.png';
+import Background from './background/pic2.png';
 
 export {
     Logo,
@@ -11,5 +12,6 @@ export {
     GooglePlay,
     ScreensApp,
     LinkedIn,
-    Whatsapp
+    Whatsapp,
+    Background
 }
