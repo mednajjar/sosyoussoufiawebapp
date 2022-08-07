@@ -1,4 +1,4 @@
-import './index.css';
+import React from 'react';
 import { Home, About, NotFound, Contact, Privacy, TopBar } from './components';
 import {
   BrowserRouter,
