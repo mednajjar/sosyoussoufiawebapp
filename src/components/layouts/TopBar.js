@@ -5,12 +5,6 @@ import { Logo } from '../../assets';
 const TopBar = (props) => {
     const location = useLocation();
     const [url, setUrl] = useState("")
-    // const [isTrue, setIsTrue] = useState(false)
-    // useEffect(() => {
-    //     if (location.pathname === "/about" || location.pathname === "/contact") {
-    //         setIsTrue(true)
-    //     }
-    // }, [isTrue])
 
     useEffect(() => {
         setUrl(location.pathname)
