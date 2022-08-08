@@ -36,7 +36,6 @@ const TopBar = (props) => {
     }
 
 
-    console.log('props :', url)
 
     return (
         <div style={backColor()}>

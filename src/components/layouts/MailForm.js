@@ -12,6 +12,11 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress'
 import axios from 'axios';
+// import { Link } from 'react-router-dom';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const baseURL = "https://nodemailer-sosyoussoufia.herokuapp.com/send"
 const theme = createTheme();
@@ -38,7 +43,6 @@ const MailForm = () => {
             setLoading(false)
             setStatu(res.data.status)
             setError(res.data)
-            console.log('response', res.data)
         }).catch((err) => {
             setError(err)
         })
@@ -48,7 +52,6 @@ const MailForm = () => {
             setTokenCaptcha(true)
         }
     }
-    console.log('data', data)
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -168,6 +171,35 @@ const MailForm = () => {
 
                                     </Button>
 
+                                </Box>
+                                <Box
+                                    sx={{
+                                        marginTop: 8,
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <Avatar sx={{ m: 1, bgcolor: '#0A66C2' }}>
+                                        <a href="https://www.linkedin.com/in/mohammed-najjar-3091a71a5/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon />
+                                        </a>
+                                    </Avatar>
+                                    <Avatar sx={{ m: 1, bgcolor: '#1976D2' }}>
+                                        <a href="https://www.facebook.com/hamouda.med.5661" target="_blank" rel="noopener noreferrer">
+                                            <FacebookIcon />
+                                        </a>
+                                    </Avatar>
+                                    <Avatar sx={{ m: 1, bgcolor: 'black' }}>
+                                        <a href="https://github.com/mednajjar" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon />
+                                        </a>
+                                    </Avatar>
+                                    <Avatar sx={{ m: 1, bgcolor: '#53EE6E' }}>
+                                        <a href="https://wa.me/0606587853" target="_blank" rel="noopener noreferrer">
+                                            <WhatsAppIcon />
+                                        </a>
+                                    </Avatar>
                                 </Box>
                             </Box>
                         )
