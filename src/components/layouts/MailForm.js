@@ -80,7 +80,7 @@ const MailForm = () => {
                                     تم الإرسال بنجاح سنقوم بالرد عليكم في أقرب وقت
                                 </Typography>
                                 <Typography component="h1" variant="h5">
-                                    Message sent successfully
+                                    Sent successfully, we will get back to you as soon as possible
                                 </Typography>
                             </Box>
 
