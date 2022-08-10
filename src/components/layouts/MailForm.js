@@ -195,7 +195,7 @@ const MailForm = () => {
                                         </a>
                                     </Avatar>
                                     <Avatar sx={{ m: 1, bgcolor: '#53EE6E' }}>
-                                        <a href="https://wa.me/0606587853" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://wa.me/606587853" target="_blank" rel="noopener noreferrer">
                                             <WhatsAppIcon />
                                         </a>
                                     </Avatar>
