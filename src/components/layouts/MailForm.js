@@ -156,22 +156,20 @@ const MailForm = () => {
                                             />
                                         </Grid>
                                     </Grid>
-
-                                    {
-                                        !loading ? (
-                                            <Button
-                                                type="submit"
-                                                fullWidth
-                                                variant="outlined"
-                                                sx={{ mt: 3, mb: 2 }}
-                                                disabled={!tokenCaptcha}
-                                            >
-                                                Send
-                                            </Button>) : <CircularProgress />
-                                    }
-
-
-
+                                    <Grid className='flex justify-center items-center'>
+                                        {
+                                            !loading ? (
+                                                <Button
+                                                    type="submit"
+                                                    fullWidth
+                                                    variant="outlined"
+                                                    sx={{ mt: 3, mb: 2 }}
+                                                    disabled={!tokenCaptcha}
+                                                >
+                                                    Send
+                                                </Button>) : <CircularProgress className='mt-7' />
+                                        }
+                                    </Grid>
                                 </Box>
                                 <Box
                                     sx={{
