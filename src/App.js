@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Footer from './components/layouts/Footer';
+// import Footer from './components/layouts/Footer';
 
 
 
@@ -21,7 +21,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="*" exact={true} element={<NotFound />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
