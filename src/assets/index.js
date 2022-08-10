@@ -6,6 +6,7 @@ import LinkedIn from './icons/linkedin.png';
 import Whatsapp from './icons/whatsapp.png';
 import Background from './background/pic2.png';
 import BgAbout from './background/bg18.png';
+import BgContact from './background/bg5.png';
 
 export {
     Logo,
@@ -15,5 +16,6 @@ export {
     LinkedIn,
     Whatsapp,
     Background,
-    BgAbout
+    BgAbout,
+    BgContact
 }

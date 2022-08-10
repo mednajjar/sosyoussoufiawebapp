@@ -24,7 +24,7 @@ const TopBar = (props) => {
 
         } else {
             return {
-                background: '#3396FF'
+                background: '#FEF9F2'
             }
         }
     }
