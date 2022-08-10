@@ -153,22 +153,24 @@ const MailForm = () => {
                                             <ReCAPTCHA
                                                 sitekey={process.env.REACT_APP_SITE_KEY}
                                                 onChange={onChange}
-
                                             />
                                         </Grid>
                                     </Grid>
-                                    <Button
-                                        type="submit"
-                                        fullWidth
-                                        variant="outlined"
-                                        sx={{ mt: 3, mb: 2 }}
-                                        disabled={!tokenCaptcha}
-                                    >
-                                        {
-                                            !loading ? "Send" : <CircularProgress />
-                                        }
 
-                                    </Button>
+                                    {
+                                        !loading ? (
+                                            <Button
+                                                type="submit"
+                                                fullWidth
+                                                variant="outlined"
+                                                sx={{ mt: 3, mb: 2 }}
+                                                disabled={!tokenCaptcha}
+                                            >
+                                                Send
+                                            </Button>) : <CircularProgress />
+                                    }
+
+
 
                                 </Box>
                                 <Box
