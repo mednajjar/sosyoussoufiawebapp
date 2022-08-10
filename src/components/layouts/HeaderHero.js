@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { ScreensApp, GooglePlay, Background } from '../../assets'
 const HeaderHero = () => {
     return (
