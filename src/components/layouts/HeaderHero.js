@@ -24,7 +24,7 @@ const HeaderHero = () => {
 
             </div>
             <div className='mt-6'>
-                <img src={ScreensApp} alt="app" style={{ width: "35vw", height: "auto" }} />
+                <img src={ScreensApp} alt="app" style={{ width: "40vw", height: "auto" }} />
             </div>
         </div>
     )
