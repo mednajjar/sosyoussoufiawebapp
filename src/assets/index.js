@@ -5,6 +5,7 @@ import ScreensApp from './images/screensApp.png';
 import LinkedIn from './icons/linkedin.png';
 import Whatsapp from './icons/whatsapp.png';
 import Background from './background/pic2.png';
+import BgAbout from './background/bg18.png';
 
 export {
     Logo,
@@ -13,5 +14,6 @@ export {
     ScreensApp,
     LinkedIn,
     Whatsapp,
-    Background
+    Background,
+    BgAbout
 }
