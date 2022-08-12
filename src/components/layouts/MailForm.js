@@ -74,6 +74,8 @@ const MailForm = () => {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
+                                    justifyContent: 'center',
+                                    textAlign: 'center'
                                 }}
                             >
                                 <Typography component="h1" variant="h5">
