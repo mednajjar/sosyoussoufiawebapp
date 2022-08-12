@@ -7,6 +7,7 @@ import Whatsapp from './icons/whatsapp.png';
 import Background from './background/pic2.png';
 import BgAbout from './background/bg18.png';
 import BgContact from './background/bg5.png';
+import P404 from './images/pikabu.gif';
 
 export {
     Logo,
@@ -17,5 +18,6 @@ export {
     Whatsapp,
     Background,
     BgAbout,
-    BgContact
+    BgContact,
+    P404,
 }
