@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ReCAPTCHA from "react-google-recaptcha"
+// import ReCAPTCHA from "react-google-recaptcha"
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,10 +11,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress'
-import axios from 'axios';
+// import axios from 'axios';
 import { BgAbout } from '../../assets';
 
-const baseURL = "https://nodemailer-sosyoussoufia.herokuapp.com/login"
+// const baseURL = "https://nodemailer-sosyoussoufia.herokuapp.com/login"
 const theme = createTheme();
 
 const Login = () => {
@@ -31,13 +31,14 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setLoading(true)
-        axios.post(baseURL, data).then((res) => {
-            setLoading(false)
-            setError(res.data)
-        }).catch((err) => {
-            setError(err)
-        })
+        // setLoading(true)
+        // axios.post(baseURL, data).then((res) => {
+        //     setLoading(false)
+        //     setError(res.data)
+        // }).catch((err) => {
+        //     setError(err)
+        // })
+        return alert(`${data.email}`)
     };
     function onChange(value) {
         if (value) {
@@ -107,12 +108,12 @@ const Login = () => {
                                         onChange={handleChange}
                                     />
                                 </Grid>
-                                <Grid item xs={12}>
+                                {/* <Grid item xs={12}>
                                     <ReCAPTCHA
                                         sitekey={process.env.REACT_APP_SITE_KEY}
                                         onChange={onChange}
                                     />
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                             <Grid className='flex justify-center items-center'>
                                 {
