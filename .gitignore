@@ -7,13 +7,10 @@
 .env
 /.env
 .dockerignore
-/.dockerignore
-/dockerfile
 dockerfile
-/docker-compose.yml
 docker-compose.yml
 .gitignore
-/.gitignore
+
 
 # testing
 /coverage
