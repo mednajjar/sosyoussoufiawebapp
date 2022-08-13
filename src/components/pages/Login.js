@@ -18,7 +18,7 @@ import { BgAbout } from '../../assets';
 const theme = createTheme();
 
 const Login = () => {
-    const [tokenCaptcha, setTokenCaptcha] = useState(false)
+    // const [tokenCaptcha, setTokenCaptcha] = useState(false)
     const [data, setData] = useState({
         email: "",
         password: ""
@@ -33,18 +33,18 @@ const Login = () => {
         event.preventDefault();
         // setLoading(true)
         // axios.post(baseURL, data).then((res) => {
-        //     setLoading(false)
-        //     setError(res.data)
+        setLoading(false)
+        setError(null)
         // }).catch((err) => {
         //     setError(err)
         // })
         return alert(`${data.email}`)
     };
-    function onChange(value) {
-        if (value) {
-            setTokenCaptcha(true)
-        }
-    }
+    // function onChange(value) {
+    //     if (value) {
+    //         setTokenCaptcha(true)
+    //     }
+    // }
     return (
         <ThemeProvider theme={theme}>
             <div style={{
@@ -123,7 +123,7 @@ const Login = () => {
                                             fullWidth
                                             variant="outlined"
                                             sx={{ mt: 3, mb: 2 }}
-                                            disabled={!tokenCaptcha}
+                                        // disabled={!tokenCaptcha}
                                         >
                                             Submit
                                         </Button>) : <CircularProgress className='mt-7' />
