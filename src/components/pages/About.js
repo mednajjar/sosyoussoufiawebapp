@@ -1,5 +1,5 @@
 import React from 'react'
-import { BgAbout } from '../assets'
+import { BgAbout } from '../../assets'
 // import { Link } from 'react-router-dom';
 
 const About = () => {

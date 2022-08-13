@@ -1,5 +1,5 @@
 import React from 'react'
-import { P404 } from '../assets'
+import { P404 } from '../../assets'
 const NotFound = () => {
   return (
     <div style={{ background: '#F6F6F6' }} className='grid font-semibold text-lg text-center max-w-7xl mx-auto mt-10 rounded-full h-full items-center justify-center p-5'>

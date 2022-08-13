@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MailForm from './layouts/MailForm';
+import MailForm from '../layouts/MailForm';
 
 
 
