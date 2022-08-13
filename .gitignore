@@ -6,6 +6,9 @@
 .pnp.js
 .env
 /.env
+.dockerignore
+dockerfile
+docker-compode.yml
 
 # testing
 /coverage

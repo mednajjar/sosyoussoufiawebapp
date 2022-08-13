@@ -108,7 +108,7 @@ const MailForm = () => {
                                             <Grid item xs={12} sx={{ textAlign: 'center' }}>
                                                 {
                                                     error !== null &&
-                                                    <Typography component="h1" variant="p">
+                                                    <Typography component="h1" variant="p" sx={{ color: 'red' }}>
                                                         {error}
                                                     </Typography>
 
