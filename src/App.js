@@ -5,27 +5,29 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-// import Footer from './components/layouts/Footer';
-
 
 
 function App() {
-  return (
 
-    <BrowserRouter>
-      <TopBar />
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="privacy_policy" element={<Privacy />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="login" element={<Login />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="*" exact={true} element={<NotFound />} />
-      </Routes>
-      {/* <Footer /> */}
-    </BrowserRouter>
+  return (
+    <React.Fragment>
+      <BrowserRouter>
+        <TopBar />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="privacy_policy" element={<Privacy />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="login" element={<Login />} />
+          <Route path="/dashboard/" exact element={<Dashboard />} />
+          <Route path="/dashboard/:page" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        {/* <Footer /> */}
+      </BrowserRouter>
+    </React.Fragment>
   );
 }
 
 export default App;
+

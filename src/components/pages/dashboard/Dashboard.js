@@ -11,16 +11,23 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+// import Grid from '@mui/material/Grid';
+// import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/listItems';
-import Chart from './components/Charts';
-import Deposits from './components/Deposits';
-import Orders from './components/Orders';
+
+// import Chart from './components/Charts';
+// import Deposits from './components/Deposits';
+// import Orders from './components/Orders';
+// import Home from './components/Home';
+// import Routes from './Routes'
+import { useLocation } from 'react-router-dom'
+// import NotFound from '../NotFound';
+import { listPages } from './components/listpages'
+
 
 function Copyright(props) {
     return (
@@ -88,8 +95,10 @@ function DashboardContent() {
     const toggleDrawer = () => {
         setOpen(!open);
     };
-
+    const location = useLocation()
+    console.log("list page", listPages)
     return (
+
         <ThemeProvider theme={mdTheme}>
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
@@ -161,45 +170,26 @@ function DashboardContent() {
                 >
                     <Toolbar />
                     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                        <Grid container spacing={3}>
-                            {/* Chart */}
-                            <Grid item xs={12} md={8} lg={9}>
-                                <Paper
-                                    sx={{
-                                        p: 2,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        height: 240,
-                                    }}
-                                >
-                                    <Chart />
-                                </Paper>
-                            </Grid>
-                            {/* Recent Deposits */}
-                            <Grid item xs={12} md={4} lg={3}>
-                                <Paper
-                                    sx={{
-                                        p: 2,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        height: 240,
-                                    }}
-                                >
-                                    <Deposits />
-                                </Paper>
-                            </Grid>
-                            {/* Recent Orders */}
-                            <Grid item xs={12}>
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                    <Orders />
-                                </Paper>
-                            </Grid>
-                        </Grid>
+                        {/* render the spesific page */}
+                        {/* {
+                            location.pathname === "/dashboard/orders" ?
+                                <Orders /> :
+                                location.pathname === "/dashboard/deposits" ?
+                                    <Deposits /> : location.pathname === "/dashboard/charts" ?
+                                        <Chart /> : <p>dashboard</p>
+                        } */}
+                        {
+                            listPages.map((res) => location.pathname === res.route && res.component)
+
+                        }
+
+                        {/* ************************* */}
                         <Copyright sx={{ pt: 4 }} />
                     </Container>
                 </Box>
             </Box>
         </ThemeProvider>
+
     );
 }
 

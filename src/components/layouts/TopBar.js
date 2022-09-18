@@ -32,7 +32,7 @@ const TopBar = (props) => {
 
 
     return (
-        (url !== "/login" && url !== "/dashboard") && (
+        (["/", "/contact", "/about", "/privacy_policy"].includes(location.pathname) && (
             <div style={backColor()}>
                 <header className="flex justify-between h-auto w-full" style={{ width: "90%", margin: "0 auto" }}>
                     <NavLink to="/">
@@ -47,6 +47,7 @@ const TopBar = (props) => {
                 </header>
 
             </div>
+        )
         )
 
 
