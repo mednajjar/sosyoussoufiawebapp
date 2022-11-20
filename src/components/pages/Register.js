@@ -14,19 +14,31 @@ import CircularProgress from '@mui/material/CircularProgress'
 // import axios from 'axios';
 import { BgAbout } from '../../assets';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+// import { useAuth } from '../../contexts/AuthContext';
+import {
+    createUserWithEmailAndPassword,
+    // signInWithEmailAndPassword,
+    // onAuthStateChanged,
+    // signOut,
+    getAuth
+} from "firebase/auth";
+import app  from '../../firebase';
+
 
 // const baseURL = "https://nodemailer-sosyoussoufia.herokuapp.com/login"
 const theme = createTheme();
 
-const Login = () => {
-    const { signin, currentUser } = useAuth()
+const Register = () => {
+    // const {signup} = useAuth()
     // eslint-disable-next-line
     const navigation = useNavigate();
+const auth = getAuth(app)
     // const [tokenCaptcha, setTokenCaptcha] = useState(false)
     const [data, setData] = useState({
         email: "",
-        password: ""
+        displayName: "",
+        password: "",
+        confirmPassword: ""
     })
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
@@ -34,7 +46,7 @@ const Login = () => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
 
-    async function handleSubmit(event) {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         // setLoading(true)
         // axios.post(baseURL, data).then((res) => {
@@ -43,20 +55,28 @@ const Login = () => {
         // }).catch((err) => {
         //     setError(err)
         // })
+        setLoading(true)
         try {
-            setLoading(true)
-       const test = await signin(data.email, data.password)
-       if(test) console.log('test', test)
-       
 
-
-        } catch(err) {
-            setLoading(false)
-            console.log('email or password wrong!', err)
+            const user = await createUserWithEmailAndPassword(
+                auth,
+                data.email,
+                data.displayName,
+                data.password
+            );
+            console.log(user);
+        } catch (error) {
+            console.log(error.message);
         }
+        // try {
+        //      signup(data.email, data.password)   
+        // } catch (error) {
+        //     console.log('err', error)
+        // }
         // setTimeout(() => {
         //     return navigation('/dashboard/')
         // }, 5000);
+        console.log('user', data)
 
     };
     // function onChange(value) {
@@ -92,9 +112,8 @@ const Login = () => {
                             <LockIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
-                            Login
+                            Register
                         </Typography>
-                        {currentUser && currentUser.email}
                         <Box component="form" validate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sx={{ textAlign: 'center' }}>
@@ -105,6 +124,17 @@ const Login = () => {
                                         </Typography>
 
                                     }
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        id="displayName"
+                                        label="User name"
+                                        name="displayName"
+                                        autoComplete="displayName"
+                                        onChange={handleChange}
+                                    />
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField
@@ -121,11 +151,21 @@ const Login = () => {
                                     <TextField
                                         required
                                         fullWidth
-                                        type="text"
+                                        type="password"
                                         id="password"
                                         label="password"
                                         name="password"
-
+                                        onChange={handleChange}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        type="password"
+                                        id="confirmPassword"
+                                        label="Confirm password"
+                                        name="confirmPassword"
                                         onChange={handleChange}
                                     />
                                 </Grid>
@@ -145,7 +185,6 @@ const Login = () => {
                                             variant="outlined"
                                             sx={{ mt: 3, mb: 2 }}
                                         // disabled={!tokenCaptcha}
-
                                         >
                                             Submit
                                         </Button>) : <CircularProgress className='mt-7' />
@@ -163,4 +202,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register

@@ -1,8 +1,23 @@
+import { Grid, Paper } from '@mui/material'
 import React from 'react'
 
 const Deposits = () => {
     return (
-        <h1>Deposits</h1>
+        <Grid container spacing={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={12}>
+                <Paper
+                    sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: 240,
+                    }}
+                >
+                    this is a deposite
+                </Paper>
+            </Grid>
+        </Grid>
     )
 }
 

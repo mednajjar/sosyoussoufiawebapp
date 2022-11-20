@@ -1,8 +1,6 @@
 import { Grid, Paper } from '@mui/material'
 import React from 'react'
-import Charts from './Charts'
-import Deposits from './Deposits'
-import Orders from './Orders'
+
 
 const Home = () => {
     return (
@@ -17,7 +15,8 @@ const Home = () => {
                         height: 240,
                     }}
                 >
-                    <Charts />
+                    {/* <Charts /> */}
+                    some info card
                 </Paper>
             </Grid>
             {/* Recent Deposits */}
@@ -30,13 +29,15 @@ const Home = () => {
                         height: 240,
                     }}
                 >
-                    <Deposits />
+                    {/* <Deposits /> */}
+                    an other info card
                 </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    <Orders />
+                    {/* <Orders /> */}
+                    third info card
                 </Paper>
             </Grid>
         </Grid>

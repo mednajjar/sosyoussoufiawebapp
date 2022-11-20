@@ -24,9 +24,10 @@ import { mainListItems, secondaryListItems } from './components/listItems';
 // import Orders from './components/Orders';
 // import Home from './components/Home';
 // import Routes from './Routes'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 // import NotFound from '../NotFound';
 import { listPages } from './components/listpages'
+import { useAuth } from '../../../contexts/AuthContext';
 
 
 function Copyright(props) {
@@ -34,7 +35,7 @@ function Copyright(props) {
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
             <Link color="inherit" href="https://mui.com/">
-                Your Website
+                SOS YOUSSOUFIA
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -91,11 +92,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 function DashboardContent() {
+    const {signout} = useAuth()
+    const logout =async()=>{
+        await signout()
+    }
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
     };
     const location = useLocation()
+    // eslint-disable-next-line
+    const navigate = useNavigate()
     console.log("list page", listPages)
     return (
 
@@ -129,7 +136,7 @@ function DashboardContent() {
                         >
                             Dashboard
                         </Typography>
-                        <IconButton color="inherit">
+                        <IconButton color="inherit" onClick={() => logout()}>
                             <Badge badgeContent={4} color="secondary">
                                 <NotificationsIcon />
                             </Badge>
@@ -179,7 +186,7 @@ function DashboardContent() {
                                         <Chart /> : <p>dashboard</p>
                         } */}
                         {
-                            listPages.map((res) => location.pathname === res.route && res.component)
+                            listPages.map((res, key) => location.pathname === res.route && <Box key={key}>{res.component}</Box> )
 
                         }
 

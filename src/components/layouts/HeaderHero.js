@@ -1,6 +1,13 @@
 import React from 'react'
 import { ScreensApp, GooglePlay, Background } from '../../assets'
+// import { Button } from '@mui/material'
 const HeaderHero = () => {
+    // const [lang, setLang] = useState(false)
+    // const submition = () => {
+    //     setLang(true)
+    // }
+
+
     return (
         <div className='flex flex-wrap justify-around items-center pt-6' style={{
             background: `url(${Background})`, backgroundPosition: 'center',
@@ -8,7 +15,9 @@ const HeaderHero = () => {
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#FEF9F2',
             width: '100%',
-            height: '70vh'
+            height: '70vh',
+            // flexDirection: lang && 'row-reverse'
+
         }}>
             <div className='flex-table text-center'>
                 <h1 className='text-3xl font-bold'><span style={{ color: '#DFA543' }}>SOS YOUSSOUFIA</span></h1>
