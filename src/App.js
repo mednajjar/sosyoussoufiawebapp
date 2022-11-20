@@ -3,8 +3,8 @@ import {
   Home,
   About,
   NotFound,
-   Contact, 
-   Privacy, 
+  Contact,
+  Privacy,
   Login,
   TopBar,
   Dashboard
@@ -77,7 +77,7 @@ function App() {
           <Route path="/dashboard/:page" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes> */}
-      {element}
+      {(element)}
 
 
     </React.Fragment>
