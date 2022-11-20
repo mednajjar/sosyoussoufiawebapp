@@ -24,7 +24,7 @@ import { mainListItems, secondaryListItems } from './components/listItems';
 // import Orders from './components/Orders';
 // import Home from './components/Home';
 // import Routes from './Routes'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 // import NotFound from '../NotFound';
 import { listPages } from './components/listpages'
 import { useAuth } from '../../../contexts/AuthContext';
@@ -93,6 +93,10 @@ const mdTheme = createTheme();
 
 function DashboardContent() {
     const {signout} = useAuth()
+    const {id} = useParams()
+    if(id){
+        console.log('id:', id)
+    }
     const logout =async()=>{
         await signout()
     }
@@ -103,7 +107,7 @@ function DashboardContent() {
     const location = useLocation()
     // eslint-disable-next-line
     const navigate = useNavigate()
-    console.log("list page", listPages)
+    console.log("location", location.pathname)
     return (
 
         <ThemeProvider theme={mdTheme}>
@@ -177,20 +181,13 @@ function DashboardContent() {
                 >
                     <Toolbar />
                     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                        {/* render the spesific page */}
-                        {/* {
-                            location.pathname === "/dashboard/orders" ?
-                                <Orders /> :
-                                location.pathname === "/dashboard/deposits" ?
-                                    <Deposits /> : location.pathname === "/dashboard/charts" ?
-                                        <Chart /> : <p>dashboard</p>
-                        } */}
                         {
-                            listPages.map((res, key) => location.pathname === res.route && <Box key={key}>{res.component}</Box> )
+                            listPages.map((res, key) =>
+                            (location.pathname === res.route || location.pathname === res.route+id) && <Box key={key}>{res.component}</Box>
+                            
+                             ) 
 
                         }
-
-                        {/* ************************* */}
                         <Copyright sx={{ pt: 4 }} />
                     </Container>
                 </Box>

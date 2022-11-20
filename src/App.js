@@ -20,9 +20,9 @@ import Register from './components/pages/Register';
 // import { AuthProvider } from './contexts/AuthContext';
 import { PrivateRoute, ConectedRoute } from './PrivateRoute';
 import { useAuth } from './contexts/AuthContext';
-import Charts from './components/pages/dashboard/components/Charts';
-import Deposits from './components/pages/dashboard/components/Deposits';
-import Orders from './components/pages/dashboard/components/Orders';
+import PharmacyList from './components/pages/dashboard/components/PharmacyList';
+import AddPharmacy from './components/pages/dashboard/components/AddPharmacy';
+import EditPharmacy from './components/pages/dashboard/components/EditPharmacy';
 // import { useAuth } from './contexts/AuthContext';
 
 function App() {
@@ -38,16 +38,16 @@ function App() {
       element: <PrivateRoute user={currentUser}><Dashboard /></PrivateRoute>,
       children: [
         {
-          path: "charts",
-          element: <Charts />,
+          path: "pharmacy_list",
+          element: <PharmacyList />,
         },
         {
-          path: "deposits",
-          element: <Deposits />
+          path: "add_pharmacy",
+          element: <AddPharmacy />
         },
         {
-          path: "orders",
-          element: <Orders />
+          path: "edit_pharmacy/:id",
+          element: <EditPharmacy />
         },
 
       ],

@@ -21,28 +21,28 @@ export const mainListItems = (
                 <ListItemText primary="Dashboard" />
             </ListItemButton>
         </Link>
-        <Link to='/dashboard/orders'>
+        {/* <Link to='/dashboard/edit_pharmacy'>
             <ListItemButton>
                 <ListItemIcon>
                     <ShoppingCartIcon />
                 </ListItemIcon>
-                <ListItemText primary="Orders" />
+                <ListItemText primary="Edit pharmacy" />
             </ListItemButton>
-        </Link>
-        <Link to="/dashboard/deposits" >
+        </Link> */}
+        <Link to="/dashboard/add_pharmacy" >
             <ListItemButton>
                 <ListItemIcon>
                     <PeopleIcon />
                 </ListItemIcon>
-                <ListItemText primary="Deposits" />
+                <ListItemText primary="Add pharmacy" />
             </ListItemButton>
         </Link>
-        <Link to="/dashboard/charts">
+        <Link to="/dashboard/pharmacy_list">
             <ListItemButton>
                 <ListItemIcon>
                     <BarChartIcon />
                 </ListItemIcon>
-                <ListItemText primary="Charts" />
+                <ListItemText primary="Pharmacy list" />
             </ListItemButton>
         </Link>
         <ListItemButton>

@@ -1,11 +1,11 @@
 import { Grid, Paper } from '@mui/material'
 import React from 'react'
 
-const Orders = () => {
+const AddPharmacy = () => {
     return (
         <Grid container spacing={3}>
             {/* Chart */}
-            <Grid item xs={12} md={8} lg={12}>
+            <Grid item xs={12} md={12} lg={12}>
                 <Paper
                     sx={{
                         p: 2,
@@ -14,11 +14,11 @@ const Orders = () => {
                         height: 240,
                     }}
                 >
-                    this is a order
+                    this is a Add phrmacy
                 </Paper>
             </Grid>
         </Grid>
     )
 }
 
-export default Orders
+export default AddPharmacy

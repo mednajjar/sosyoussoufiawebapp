@@ -1,23 +1,24 @@
 import Home from "./Home";
-import Charts from "./Charts";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
-
+import PharmacyList from "./PharmacyList";
+import AddPharmacy from "./AddPharmacy";
+import EditPharmacy from "./EditPharmacy";
+let id;
 export const listPages = [
+   
     {
         route: "/dashboard/",
         component: <Home />,
     },
     {
-        route: "/dashboard/charts",
-        component: <Charts />,
+        route: "/dashboard/pharmacy_list",
+        component: <PharmacyList />,
     },
     {
-        route: "/dashboard/deposits",
-        component: <Deposits />,
+        route: "/dashboard/add_pharmacy",
+        component: <AddPharmacy />,
     },
     {
-        route: "/dashboard/orders",
-        component: <Orders />,
+        route: "/dashboard/edit_pharmacy/",
+        component: <EditPharmacy />,
     }
 ]
