@@ -1,8 +1,22 @@
 import { Grid, Paper } from '@mui/material'
-import React from 'react'
-
+import React, {useEffect} from 'react'
+import {fetchAll} from '../../../../api'
 
 const Home = () => {
+
+       const allPharmacy = async()=>{
+ // const data = await axios.get('http://localhost:5400/allPharmacy')
+ const {data} = await fetchAll()
+ if(data){
+
+     console.log('data', data)
+ }
+     }
+ 
+     useEffect(()=>{
+         
+         allPharmacy()
+     },[])
     return (
         <Grid container spacing={3}>
             {/* Chart */}

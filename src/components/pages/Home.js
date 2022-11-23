@@ -3,7 +3,10 @@ import React from 'react'
 // import { Logo } from '../assets';
 import HeaderHero from '../layouts/HeaderHero'
 
+
+
 const Home = () => {
+    
     return (
         <HeaderHero />
     )

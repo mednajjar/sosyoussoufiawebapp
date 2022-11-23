@@ -12,6 +12,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
    // eslint-disable-next-line
     const [currentUser, setCurrentUser] = useState()
+    const [token, setToken] = useState(null)
     const [err, setErr] = useState('')
 
     function signup(displayName, email, password) {
@@ -52,6 +53,7 @@ export function AuthProvider({ children }) {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user)
+            setToken(user.accessToken)
             console.log('current user', user)
         })
         return unsubscribe
@@ -63,7 +65,8 @@ export function AuthProvider({ children }) {
         signin,
         signup,
         signout,
-        err
+        err, 
+        token
     }
     return (
         <AuthContext.Provider value={value}>

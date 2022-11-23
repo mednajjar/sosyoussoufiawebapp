@@ -2,7 +2,7 @@ import Home from "./Home";
 import PharmacyList from "./PharmacyList";
 import AddPharmacy from "./AddPharmacy";
 import EditPharmacy from "./EditPharmacy";
-let id;
+
 export const listPages = [
    
     {

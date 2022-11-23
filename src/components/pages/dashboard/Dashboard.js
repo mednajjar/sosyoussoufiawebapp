@@ -11,21 +11,12 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-// import Grid from '@mui/material/Grid';
-// import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/listItems';
-
-// import Chart from './components/Charts';
-// import Deposits from './components/Deposits';
-// import Orders from './components/Orders';
-// import Home from './components/Home';
-// import Routes from './Routes'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
-// import NotFound from '../NotFound';
 import { listPages } from './components/listpages'
 import { useAuth } from '../../../contexts/AuthContext';
 
