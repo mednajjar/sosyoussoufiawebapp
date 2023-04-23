@@ -1,10 +1,12 @@
 import React from 'react'
 import { Grid, Paper, Typography } from '@mui/material'
 import { Link } from 'react-router-dom';
+import { usePharmacy } from '../../../../contexts/PharmacyContext';
+
 const PharmacyList = () => {
-    const id1 = '123abc1'
-    const id2 = '123abc2'
-    const id3 = '123abc3'
+    const { pharmacies } = usePharmacy()
+
+
     return (
         <Grid container spacing={3}>
             {/* Chart */}
@@ -14,14 +16,15 @@ const PharmacyList = () => {
                         p: 2,
                         display: 'flex',
                         flexDirection: 'column',
-                        height: 240,
+                        height: 'auto',
                     }}
                 >
-                <Typography>this is a pharmacy list</Typography> 
-                <Link to={`/dashboard/edit_pharmacy/${id1}`} >link to edit pharmacy 1</Link>
-                <Link to={`/dashboard/edit_pharmacy/${id2}`} >link to edit pharmacy 2</Link>
-                <Link to={`/dashboard/edit_pharmacy/${id3}`} >link to edit pharmacy 3</Link>
-
+                    <Typography>this is a pharmacy list</Typography>
+                    {
+                        !!pharmacies && pharmacies.map((res) => (
+                            <Link to={`/dashboard/edit_pharmacy/${res.id}`} >link to edit pharmacy {res.name}</Link>
+                        ))
+                    }
                 </Paper>
             </Grid>
         </Grid>

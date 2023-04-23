@@ -2,11 +2,8 @@ import axios from 'axios';
 
 
 
-const url = axios.create({baseURL: "http://localhost:5400"});
+const url = axios.create({ baseURL: "http://localhost:4500/api" });
 
-url.defaults.withCredentials = true;
-
-
-
-
-export const fetchAll = () => url.get('/allPharmacy');
+export const fetchAll = async () => await url.get('/allPharmacy');
+export const pharmacyOnDuty = async () => await url.get('/pharmacyOnDuty');
+export const addPharmacy = async (data) => await url.post('/addPharmacy', data)

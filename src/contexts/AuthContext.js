@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut } from 'firebase/auth'
 import React, { useContext, useState, useEffect } from 'react'
-import {auth} from '../firebase'
+import { auth } from '../firebase'
 // import {  onAuthStateChanged, createUserWithEmailAndPassword } from "firebase/auth";
 
 const AuthContext = React.createContext()
@@ -10,63 +10,60 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-   // eslint-disable-next-line
+    // eslint-disable-next-line
     const [currentUser, setCurrentUser] = useState()
-    const [token, setToken] = useState(null)
     const [err, setErr] = useState('')
 
     function signup(displayName, email, password) {
-        createUserWithEmailAndPassword(auth,displayName, email, password)
-        .then(user=>{console.log('user', user.user)}) 
-        .catch(err => {
-            const errcod = err.code
-            console.log('errcod', errcod)
-            const errmsg = err.message
-            console.log('errmsg', errmsg)
-        })
-    
-            
+        createUserWithEmailAndPassword(auth, displayName, email, password)
+            .then(user => { console.log('user', user.user) })
+            .catch(err => {
+                const errcod = err.code
+                console.log('errcod', errcod)
+                const errmsg = err.message
+                console.log('errmsg', errmsg)
+            })
+
+
     }
     async function signin(email, password) {
         signInWithEmailAndPassword(auth, email, password)
-        .then(user=>{console.log('user', user.user)}) 
+            .then(user => { console.log('user', user.user) })
             .catch(err => {
-            const errcod = err.code
-            console.log('errcod', errcod)
-            const errmsg = err.message
-            setErr(err.message)
-            console.log('errmsg', errmsg)
-        })
-    
-            
+                const errcod = err.code
+                console.log('errcod', errcod)
+                const errmsg = err.message
+                setErr(err.message)
+                console.log('errmsg', errmsg)
+            })
+
+
     }
-    function signout(){
+    function signout() {
         signOut(auth).then(() => {
             // Sign-out successful.
             console.log('successful signout')
-          }).catch((error) => {
+        }).catch((error) => {
             // An error happened.
             console.log('err', error)
-          });
+        });
 
-    } 
+    }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user)
-            setToken(user.accessToken)
             console.log('current user', user)
         })
         return unsubscribe
-        
-    }, [currentUser])
+
+    }, [])
 
     const value = {
         currentUser,
         signin,
         signup,
         signout,
-        err, 
-        token
+        err
     }
     return (
         <AuthContext.Provider value={value}>

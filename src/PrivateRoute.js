@@ -2,15 +2,15 @@ import React from 'react'
 import { Navigate } from 'react-router-dom';
 import { useAuth } from './contexts/AuthContext';
 
-export const PrivateRoute = ({ children}) => {
-  const { currentUser: user } = useAuth()
+export const PrivateRoute = ({ children }) => {
+  const { currentUser } = useAuth()
 
-  return user ? children : <Navigate to="/login" />;
-  
+  return currentUser ? children : <Navigate to="/login" />;
+
 }
-export const ConectedRoute = ({ children}) => {
-  const { currentUser: user } = useAuth()
+export const ConectedRoute = ({ children }) => {
+  const { currentUser } = useAuth()
 
-  return !user ? children : <Navigate to="/dashboard/" />;
-  
+  return !currentUser ? children : <Navigate to="/dashboard/" />;
+
 }
