@@ -45,12 +45,12 @@ const Login = () => {
         // })
         try {
             setLoading(true)
-       const test = await signin(data.email, data.password)
-       if(test) console.log('test', test)
-       
+            const test = await signin(data.email, data.password)
+            if (test) console.log('test', test)
 
 
-        } catch(err) {
+
+        } catch (err) {
             setLoading(false)
             console.log('email or password wrong!', err)
         }
@@ -121,7 +121,7 @@ const Login = () => {
                                     <TextField
                                         required
                                         fullWidth
-                                        type="text"
+                                        type="password"
                                         id="password"
                                         label="password"
                                         name="password"

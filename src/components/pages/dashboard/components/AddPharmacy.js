@@ -10,9 +10,10 @@ import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress'
 import Container from '@mui/material/Container';
 import { usePharmacy } from '../../../../contexts/PharmacyContext';
-
+import { useNavigate } from 'react-router-dom';
 
 const AddPharmacy = () => {
+    const navigate = useNavigate()
     const { addPharmacy } = usePharmacy()
     const [data, setData] = useState({
         name: "",
@@ -30,14 +31,40 @@ const AddPharmacy = () => {
     }
     async function handleSubmit(event) {
         event.preventDefault();
-        const RES = await addPharmacy(data)
-        if (RES) console.log('data', RES)
-        setLoading(false)
-        setError(null)
 
+        // Check if data is empty
+        const isEmpty = Object.values(data).some((value) => value === "");
 
+        if (isEmpty) {
+            setError("Data is empty!");
+            return;
+        }
+
+        try {
+            setLoading(true);
+            setError(null);
+
+            // Add pharmacy to database
+            await addPharmacy(data);
+
+            // Redirect to dashboard
+            navigate("/dashboard/")
+        } catch (error) {
+            let errorMessage;
+
+            // Handle specific error types
+            if (error.code === "permission-denied") {
+                errorMessage = "You do not have permission to add a pharmacy.";
+            } else {
+                errorMessage = "An error occurred while adding the pharmacy.";
+            }
+
+            setError(errorMessage);
+        } finally {
+            setLoading(false);
+        }
     };
-    console.log("data", data)
+
     return (
         <Grid container spacing={3}>
             {/* Chart */}
@@ -72,7 +99,7 @@ const AddPharmacy = () => {
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} sx={{ textAlign: 'center' }}>
                                         {
-                                            error !== null &&
+                                            !!error &&
                                             <Typography component="h1" variant="p" sx={{ color: 'red' }}>
                                                 {error}
                                             </Typography>

@@ -5,7 +5,11 @@ import HeaderHero from '../layouts/HeaderHero'
 
 
 
+
+
+
 const Home = () => {
+    console.log('fatttt')
     return (
         <HeaderHero />
     )

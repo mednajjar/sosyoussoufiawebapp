@@ -1,10 +1,11 @@
 import React from 'react'
-import { Grid, Paper, Typography } from '@mui/material'
+import { Grid, Paper, Typography, Button } from '@mui/material'
 import { Link } from 'react-router-dom';
 import { usePharmacy } from '../../../../contexts/PharmacyContext';
 
+
 const PharmacyList = () => {
-    const { pharmacies } = usePharmacy()
+    const { pharmacies, deletePharmacy } = usePharmacy()
 
 
     return (
@@ -22,7 +23,25 @@ const PharmacyList = () => {
                     <Typography>this is a pharmacy list</Typography>
                     {
                         !!pharmacies && pharmacies.map((res) => (
-                            <Link to={`/dashboard/edit_pharmacy/${res.id}`} >link to edit pharmacy {res.name}</Link>
+                            <Grid key={res.id} sx={{
+                                p: 2,
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                height: 'auto',
+                            }}>
+                                <Link to={`/dashboard/edit_pharmacy/${res.id}`}>link to edit pharmacy {res.id}</Link>
+                                <Button
+                                    // type="submit"
+                                    variant="outlined"
+                                    sx={{ mt: 3, mb: 2 }}
+                                    onClick={() => deletePharmacy(res.id)}
+
+                                >
+                                    Submit
+                                </Button>
+
+                            </Grid>
                         ))
                     }
                 </Paper>
