@@ -10,6 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 const EditPharmacy = () => {
     // const navigate = useNavigate()
     const { id } = useParams()
+
     const { updatePharmacy, pharmacies } = usePharmacy()
     const [data, setData] = useState({
         start: "",

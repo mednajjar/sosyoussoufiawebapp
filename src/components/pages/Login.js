@@ -51,7 +51,7 @@ const Login = () => {
 
 
         } catch (err) {
-            setLoading(false)
+            !!err && setLoading(false)
             console.log('email or password wrong!', err)
         }
         // setTimeout(() => {

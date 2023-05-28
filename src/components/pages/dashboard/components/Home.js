@@ -33,8 +33,16 @@ const Home = () => {
                     some info card
                     {
                         !!pharmacies && pharmacies.map((res, i) => (
-                            <Grid key={i}>
-                                <Typography>{res.id + " " + res.name + " " + res.start + " " + res.end}</Typography>
+                            <Grid key={i} sx={{
+
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                textAlign: 'center'
+                            }}>
+                                <Typography>{res.id}</Typography>
+                                <Typography>{res.name}</Typography>
+                                <Typography>{res.start}</Typography>
+                                <Typography>{res.end}</Typography>
                             </Grid>
                         ))
                     }
